@@ -1,7 +1,2 @@
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
-
-</body>
-</html>
+<?php
+header("Location: http://localhost:3000");
