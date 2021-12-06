@@ -1,8 +1,17 @@
+import Link from 'next/link'
 import { useState } from 'react'
 import { Logo } from '../..'
 import style from './style.module.scss'
 
-export default function Header() {
+type HeaderProps = {
+  menu: {
+    ID: number
+    url: string
+    title: string
+  }[]
+}
+
+export default function Header({ menu }: HeaderProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (
@@ -16,11 +25,11 @@ export default function Header() {
           <span className="sr-only">Ouvrir le menu</span>
         </button>
         <ul className={style.flex}>
-          <li><a href="#">Menu item</a></li>
-          <li><a href="#">Menu item</a></li>
-          <li><a href="#">Menu item</a></li>
-          <li><a href="#">Menu item</a></li>
-          <li><a href="#">Menu item</a></li>
+          {menu && menu.map((item) => (
+            <li key={item.ID}>
+              <Link href={item.url}>{item.title}</Link>
+            </li>
+          ))}
         </ul>
       </div>
     </header>
