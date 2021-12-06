@@ -1,0 +1,43 @@
+@import 'core.scss';
+@import 'mixins.scss';
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: $secondary;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  padding-top: toRem(80);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $secondary;
+}
+
+.hide {
+  display: none;
+}

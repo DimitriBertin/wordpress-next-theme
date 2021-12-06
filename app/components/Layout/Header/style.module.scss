@@ -1,0 +1,75 @@
+@import "/styles/core.scss";
+@import "/styles/mixins.scss";
+
+.block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: toRem(80);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  @include shadow;
+  @include container;
+
+  .menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    @include tablet {
+      display: none;
+
+      &.isOpen {
+        display: block;
+      }
+    }
+
+    a {
+      font-size: toRem(14);
+      transition: all .3s ease;
+        
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    li {
+      &:not(:last-child) {
+        margin-right: toRem(10);
+      }
+    }
+  }
+
+  .button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: toRem(30);
+    height: toRem(22);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+    cursor: pointer;
+
+    @include minTablet {
+      display: none;
+    }
+
+    span {
+      width: 100%;
+      height: 1px;
+      background: $secondary;
+    }
+  }
+}

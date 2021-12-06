@@ -1,0 +1,11 @@
+$primary: #db81e5;
+$secondary: #2A2A2A;
+
+// BREAKPOINT
+$mobile: 768px;
+$tablet: 990px;
+
+:export {
+  primary: $primary;
+  secondary: $secondary;
+}

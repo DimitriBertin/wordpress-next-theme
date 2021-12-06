@@ -1,0 +1,46 @@
+@import '/styles/mixins.scss';
+@import '/styles/core.scss';
+
+.block {
+  @include container;
+  padding-top: toRem(40);
+  padding-bottom: toRem(40);
+  border-top: 1px solid rgba($secondary, 0.2);
+
+  .container {
+    display: grid;
+    grid-gap: toRem(20);
+    
+    @include minTablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: toRem(10);
+
+      a {
+        font-size: toRem(14);
+        transition: all .3s ease;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    font-size: toRem(10);
+    // color: $primary;
+    font-weight: 800;
+    @include minTablet {
+      text-align: right;
+    }
+  }
+}
