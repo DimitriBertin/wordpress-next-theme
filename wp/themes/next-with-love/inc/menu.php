@@ -35,6 +35,13 @@ add_action( 'init', 'next_custom_location_menu' );
 function next_menu($data) {
   $slug = $data['slug'];
   $menu = wp_get_nav_menu_items(get_nav_menu_locations()[$slug]);
+  $fontID = get_option( 'page_on_front' );
+  // Add slug
+  foreach($menu as $row) {
+    $id = get_post_meta( $row->ID, '_menu_item_object_id', true);
+    $post = get_post($id);
+    $row->slug = $fontID == $id ? '' : $post->post_name;
+  }
 
   return $menu;
 }

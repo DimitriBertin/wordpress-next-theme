@@ -8,12 +8,12 @@ type HeaderProps = {
     ID: number
     url: string
     title: string
+    slug: string
   }[]
 }
 
 export default function Header({ menu }: HeaderProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false)
-
   return (
     <header className={style.block} >
       <Logo />
@@ -27,7 +27,7 @@ export default function Header({ menu }: HeaderProps) {
         <ul className={style.flex}>
           {menu && menu.map((item) => (
             <li key={item.ID}>
-              <Link href={item.url}>{item.title}</Link>
+              <Link href={`/${item.slug}`}>{item.title}</Link>
             </li>
           ))}
         </ul>

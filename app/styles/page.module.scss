@@ -1,0 +1,8 @@
+@import "/styles/core.scss";
+@import "/styles/mixins.scss";
+
+.block {
+    @include container;
+    padding-top: toRem(50);
+    padding-bottom: toRem(50);
+}
