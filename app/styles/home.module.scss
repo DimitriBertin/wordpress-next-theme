@@ -1,7 +1,22 @@
+@import "/styles/core.scss";
 @import "/styles/mixins.scss";
 
 .block {
     @include container;
     padding-top: toRem(50);
     padding-bottom: toRem(50);
+
+    h1 {
+        color: $primary;
+        margin-bottom: toRem(50);
+        margin-top: toRem(50);
+        font-size: toRem(48);
+    }
+
+    p {
+        max-width: toRem(880);
+        font-size: toRem(16);
+        line-height: 1.5;
+        margin-bottom: toRem(25);
+    }
 }
