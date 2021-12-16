@@ -7,7 +7,7 @@ import Head from 'next/head'
 const fetcher = url => fetch(url).then(r => r.json())
 
 export default function Layout({ children }: ChildrenProps) {
-  const { data: menuObj, error } = useSWR(`${process.env.API_NEXT}/menu/primary`, fetcher)
+  const { data, error } = useSWR(`${process.env.API_NEXT}/partial`, fetcher)
 
   return (
     <div className="app">
@@ -16,11 +16,11 @@ export default function Layout({ children }: ChildrenProps) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;800&display=swap" rel="stylesheet" />
       </Head>
-      <Header menu={menuObj} />
+      <Header menu={data.menu} />
       <main className="main">
         {children}
       </main>
-      <Footer />
+      <Footer {...data} />
     </div>
   )
 }

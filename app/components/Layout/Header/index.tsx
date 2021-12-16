@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Logo } from '../..'
 import style from './style.module.scss'
+import clsx from 'clsx'
+import { useRouter } from 'next/router'
 
 type HeaderProps = {
   menu: {
@@ -14,6 +16,7 @@ type HeaderProps = {
 
 export default function Header({ menu }: HeaderProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false)
+  const router = useRouter()
   return (
     <header className={style.block} >
       <Logo />
@@ -27,7 +30,18 @@ export default function Header({ menu }: HeaderProps) {
         <ul className={style.flex}>
           {menu && menu.map((item) => (
             <li key={item.ID}>
-              <Link href={`/${item.slug}`}>{item.title}</Link>
+              <Link href={item.url}>
+                <a 
+                  className={
+                    clsx((
+                      (item.url === `${process.env.BASE_URI}${router.asPath}`) ||
+                      (item.url === `${process.env.BASE_URI}${router.asPath}/`)) && 
+                      style.isActive
+                    )
+                }>
+                  {item.title}
+                </a>
+              </Link>
             </li>
           ))}
         </ul>
