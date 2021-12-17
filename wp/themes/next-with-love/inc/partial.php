@@ -3,13 +3,13 @@
 function nwl_partial($data) {
   // $slug = $data['slug'];
   $menu = wp_get_nav_menu_items(get_nav_menu_locations()['primary']);
+  $footerMenu = wp_get_nav_menu_items(get_nav_menu_locations()['footer']);
+  $options = get_theme_mod('custom_settings', '');
 
   return array(
     'menu' => $menu,
-    'widget' => array(
-      'type' => 'type',
-    ),
-    'copyright' => 'Next with Love - 2022',
+    'footerMenu' => $footerMenu,
+    'options' => $options,
   );
 }
 

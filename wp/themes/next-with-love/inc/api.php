@@ -1,6 +1,6 @@
 <?php
 
-function get_home_json($data) {
+function nwl_get_home($data) {
   $home_id = get_option('page_on_front');
   $post = get_post($home_id);
   if ($post) return $post;
@@ -14,7 +14,7 @@ function get_home_json($data) {
 function register_homepage_route() {
    register_rest_route( 'next-with-love', '/home', array(
     'methods' => 'GET',
-    'callback' => 'get_home_json',
+    'callback' => 'nwl_get_home',
   ));
 }
 

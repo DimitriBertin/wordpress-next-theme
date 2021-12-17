@@ -2,6 +2,7 @@
 require_once("inc/api.php");
 require_once("inc/partial.php");
 require_once("inc/menu.php");
+require_once("inc/options.php");
 
 $theme = 'next-with-love';
 
@@ -24,9 +25,9 @@ function nwl_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer', $theme ),
+			'name'          => 'Footer',
 			'id'            => 'sidebar-footer',
-			'description'   => esc_html__( 'Add widgets here to appear in your footer.', $theme ),
+			'description'   => 'Add widgets here to appear in your footer.',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
