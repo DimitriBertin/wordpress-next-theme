@@ -14,11 +14,11 @@ export default function Social({ social }: Props) {
 
   return (
     <ul className={style.block}>
-      {social?.facebook && <li><a href={social.facebook} rel="noopener noreferer" target="_blank"><BsFacebook /></a></li>}
-      {social?.twitter && <li><a href={social.twitter} rel="noopener noreferer" target="_blank"><BsTwitter /></a></li>}
-      {social?.instagram && <li><a href={social.instagram} rel="noopener noreferer" target="_blank"><BsInstagram /></a></li>}
-      {social?.youtube && <li><a href={social.youtube} rel="noopener noreferer" target="_blank"><BsYoutube /></a></li>}
-      {social?.whatsapp && <li><a href={social.whatsapp} rel="noopener noreferer" target="_blank"><BsWhatsapp /></a></li>}
+      {social?.facebook && <li><a href={social.facebook} rel="noreferrer" target="_blank"><BsFacebook /></a></li>}
+      {social?.twitter && <li><a href={social.twitter} rel="noreferrer" target="_blank"><BsTwitter /></a></li>}
+      {social?.instagram && <li><a href={social.instagram} rel="noreferrer" target="_blank"><BsInstagram /></a></li>}
+      {social?.youtube && <li><a href={social.youtube} rel="noreferrer" target="_blank"><BsYoutube /></a></li>}
+      {social?.whatsapp && <li><a href={social.whatsapp} rel="noreferrer" target="_blank"><BsWhatsapp /></a></li>}
     </ul>
   )
 }

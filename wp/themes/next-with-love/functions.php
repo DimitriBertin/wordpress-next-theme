@@ -3,10 +3,11 @@ require_once("inc/api.php");
 require_once("inc/partial.php");
 require_once("inc/menu.php");
 require_once("inc/options.php");
+require_once("inc/next.php");
 
 $theme = 'next-with-love';
 
-update_option( 'home', 'http://localhost:3000/' );
+// update_option( 'home', 'http://localhost:3000/' );
 
 add_theme_support(
   'html5',
@@ -35,5 +36,7 @@ function nwl_widgets_init() {
 		)
 	);
 }
+
 add_action( 'widgets_init', 'nwl_widgets_init' );
+
 ?>

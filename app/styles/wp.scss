@@ -1,0 +1,27 @@
+.wp-block-image {
+  margin: 0;
+  
+  &.size-large {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// COLUMNS
+.wp-block-columns {
+  display: grid;
+  margin: toRem(40) 0;
+
+  @include minMobile {
+    &[data-col="2"]{
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: toRem(20);
+    }
+
+    &[data-col="3"]{
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: toRem(20);
+    }
+  }
+}
